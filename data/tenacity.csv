@@ -1,0 +1,219 @@
+LABELS, DEFAULT, TYPE, GROUP, Port Pin, Digital Pin, Analog Pin, Int, Function1, Function2, ADC, Serial, Sensor 
+
+FILL COLOR, white, white, white, dimgrey, deepskyblue, limegreen, yellow, white, white, limegreen, plum, lightgrey
+BORDER COLOR, grey  , , ,          ,          ,          , , , , , , lightgrey
+BORDER WIDTH, 2
+BORDER OPACITY, 1
+
+OPACITY, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+#FONT        , Arial , , , Work Sans, Work Sans, Work Sans
+FONT        , Arial
+FONT SIZE   ,     25, , ,
+FONT COLOR  , black , , , black   ,          ,          , , , , , , black
+FONT SLANT  , normal
+FONT BOLD   ,    200, , ,700, 700, 700
+FONT STRETCH, normal 
+FONT OUTLINE, black
+FONT OUTLINE THICKNESS, 0.1
+BOXES, STD, , , PORT BOX, IDE BOX, IDE BOX, SKEWED, SKEWED, SKEWED, SKEWED, SKEWED, TEXT
+
+TYPE, IO, black, 1      
+TYPE, INPUT, black, 1   
+TYPE, OUTPUT, black, 1   
+
+WIRE, PWM, black, 1, 5
+WIRE, DIGITAL, black, 1, 5
+WIRE, ANALOG, black, 1, 5
+WIRE, POWER, black, 1, 10
+
+GROUP, DIG, deepskyblue, 1
+GROUP, ANA, limegreen, 1
+GROUP, PWM, yellow, 1
+GROUP, POWER, red, 1
+GROUP, NONE, grey, 0.1
+
+# Pin Boxes
+BOX, STD, black, 1, white, 0, 1, 100, 55, 2, 2,   0, 0
+BOX, TEXT, black, 1, white, 0, 1, 400, 55, 5, 5, -10, 0
+BOX, PORT BOX, black, 1, white, 0, 1,  80, 55, 5, 5, -10, 0
+BOX, IDE BOX, black, 1, white, 0, 1,  80, 55, 5, 5, -10, 0
+BOX, SKEWED, black, 1, white, 0, 1, 125, 55, 5, 5, -10, 0
+
+# Key Boxes
+BOX, PORTBOXKEY   , grey, 1, dimgrey      , 1, 1, 80, 35, 5, 5, 0, 0
+BOX, INTBOXKEY    , grey, 1, yellow       , 1, 1, 80, 35, 5, 5, 0, 0
+BOX, DIGBOXKEY    , grey, 1, deepskyblue  , 1, 1, 80, 35, 5, 5, 0, 0
+BOX, ANABOXKEY    , grey, 1, limegreen    , 1, 1, 80, 35, 5, 5, 0, 0
+BOX, FUNBOXKEY    , grey, 1, white        , 1, 1, 80, 35, 5, 5, 0, 0
+BOX, SERIALBOXKEY , grey, 1, plum         , 1, 1, 80, 35, 5, 5, 0, 0
+BOX, SENSORBOXKEY , grey, 1, lightgrey    , 1, 1, 80, 35, 5, 5, 0, 0
+
+# General Boxes
+BOX, DETAIL BOX, black, 1, white, 0, 3, 250, 200, 15,15,0,0
+BOX, PAGE BORDER, black, 0, white, 1, 50, 100,100,0,0,0,0
+
+
+
+#LABELS, DEFAULT, TYPE, GROUP, Port Pin, Digital Pin, Analog Pin, Int, Function1, Function2, ADC, Serial, Sensor 
+BOX, FUU  , black, 1, red, 1, 1, 125, 55, 5, 5, -10, 0
+
+TEXT FONT, PowerPin, Dejavu Sans, 25, , black, normal, bold, normal
+TEXT FONT, Heading, BenchNine, 50, , black, normal, 700, normal
+    
+PAGE, A3-P
+DPI, 300
+
+DRAW
+
+# Draw a border on the page
+BOX, PAGE BORDER, 0,0, 100%, 100%
+
+# Place Title
+ICON,Resources/title.svg, 550, 400
+
+# Place the board images at the required locations and sizes
+IMAGE,Resources/arduino-mega-2560.png, 1755, 1400, , , , , , , 90
+IMAGE,Resources/arduino-mega-2560-bottom.png, 1755, 2000, , , , , , , 90
+IMAGE,Resources/grid.png, 1755, 3123, 1070 ,1025
+
+# Left Side Pins
+ANCHOR, 1207,903
+PINSET, LEFT, PACKED, CENTER, CENTER, 60, 30, 45, 80, 10, 0
+PINTEXT, DIGITAL, IO,     NONE , ... , PowerPin, Not Conected 
+PINTEXT, POWER  , INPUT,  POWER, ... , PowerPin, IOREF 
+PINTEXT, DIGITAL, INPUT,  NONE , ... , PowerPin, RESET 
+PINTEXT, POWER  , OUTPUT, POWER, 3.3V, PowerPin,
+PINTEXT, POWER  , OUTPUT, POWER,   5V, PowerPin,
+PINTEXT, POWER  , IO    , POWER,  GND, PowerPin,
+PINTEXT, POWER  , IO    , POWER,  GND, PowerPin,
+PINTEXT, POWER  , INPUT,  POWER,  VIN, PowerPin,
+ANCHOR, 1207,1443
+PIN, ANALOG, INPUT, ANA, PF0, , A0 ,        ,     ,     , ADCO ,     , MQ-135
+PIN, ANALOG, INPUT, ANA, PF1, , A1 ,        ,     ,     , ADC1 ,     , Voltage Sensor
+PIN, ANALOG, INPUT, ANA, PF2, , A2 ,        ,     ,     , ADC2 ,     , LDR
+PIN, ANALOG, INPUT, ANA, PF3, , A3 ,        ,     ,     , ADC3 ,     , Metalldetektor
+PIN, ANALOG, INPUT, ANA, PF4, , A4 ,        ,  TCK,     , ADC4 ,     ,
+PIN, ANALOG, INPUT, ANA, PF5, , A5 ,        ,  TMS,     , ADC5 ,     ,
+PIN, ANALOG, INPUT, ANA, PF6, , A6 ,        ,  TDO,     , ADC6 ,     ,
+PIN, ANALOG, INPUT, ANA, PF7, , A7 ,        ,   DI,     , ADC7 ,     ,
+ANCHOR, 1207,1983   
+PIN, ANALOG, INPUT, ANA, PK0, , A8 , PCINT16,     ,     , ADC8 ,     , Hall 1A
+PIN, ANALOG, INPUT, ANA, PK1, , A9 , PCINT17,     ,     , ADC9 ,     , Hall 2A
+PIN, ANALOG, INPUT, ANA, PK2, , A10, PCINT18,     ,     , ADC10,     , Hall 5A
+PIN, ANALOG, INPUT, ANA, PK3, , A11, PCINT19,     ,     , ADC11,     , Hall 6A
+PIN, ANALOG, INPUT, ANA, PK4, , A12, PCINT20,     ,     , ADC12,     ,
+PIN, ANALOG, INPUT, ANA, PK5, , A13, PCINT21,     ,     , ADC13,     ,
+PIN, ANALOG, INPUT, ANA, PK6, , A14, PCINT22,     ,     , ADC14,     ,
+PIN, ANALOG, INPUT, ANA, PK7, , A15, PCINT23,     ,     , ADC15,     ,
+# Left Bottom Pins  
+ANCHOR, 1207,2583   
+PIN, DIGITAL, IO, DIG, PD7, 38, ,           ,   TO,     ,      ,     ,
+PIN, DIGITAL, IO, DIG, PG1, 40, ,           ,   RD,     ,      ,     ,
+PIN, DIGITAL, IO, DIG, PL7, 42, ,           ,     ,     ,      ,     , Motor2 DIR
+PIN, PWM    , IO, DIG, PL5, 44, ,           , OC5C,     ,      ,     , Moter1 PWM
+PIN, PWM    , IO, DIG, PL3, 46, ,           , OC5A,     ,      ,     , Motor3 PWM
+PIN, DIGITAL, IO, DIG, PL1, 48, ,           , ICP5,     ,      ,     ,
+PIN, DIGITAL, IO, DIG, PB3, 50, ,     PCINT3,     ,            , MISO,
+PIN, DIGITAL, IO, DIG, PB1, 52, ,     PCINT1,     ,            ,  SCK,
+PINTEXT, POWER, IO, POWER, GND, PowerPin,    
+PINTEXT, POWER, IO, POWER, GND, PowerPin,    
+PIN, DIGITAL, IO, DIG, PB0, 53, ,     PCINT0,     ,     ,     ,    SS,
+PIN, DIGITAL, IO, DIG, PB2, 51, ,     PCINT2,     ,     ,     ,  MOSI,
+PIN, DIGITAL, IO, DIG, PL0, 49, ,           , ICP4,     ,     ,      ,
+PIN, DIGITAL, IO, DIG, PL2, 47, ,           , T5  ,     ,     ,      ,
+PIN, PWM    , IO, DIG, PL4, 45, ,           , OC5B,     ,     ,      , Motor2 PWM
+PIN, DIGITAL, IO, DIG, PL6, 43, ,           ,     ,     ,     ,      ,
+PIN, DIGITAL, IO, DIG, PG0, 41, ,           ,   WR,     ,     ,      , Moter1 DIR
+PIN, DIGITAL, IO, DIG, PG2, 39, ,           ,  ALE,     ,     ,      ,
+
+
+# Right Side Pins
+ANCHOR, 2302,687
+PINSET, RIGHT, PACKED, CENTER, CENTER, 60, 30, 45, 80, 10, 0
+PIN, DIGITAL, IO, DIG, PD0, 21, ,    INT0   ,     ,     ,     ,   SCL, BME | Kompass | Beschleunigung
+PIN, DIGITAL, IO, DIG, PD1, 20, ,    INT1   ,     ,     ,     ,   SDA, BME | Kompass | Beschleunigung
+PIN, DIGITAL, INPUT, ANA,AREF,     ,           ,     ,     ,     ,  AREF,
+PINTEXT, POWER, IO, POWER, GND, PowerPin,
+PIN, PWM    , IO, DIG, PB7, 13, ,    PCINT7 , OC0A, OC1C,     ,      , HC-SR04
+PIN, PWM    , IO, DIG, PB6, 12, ,    PCINT6 , OC1B,     ,     ,      , HC-SR04
+PIN, PWM    , IO, DIG, PB5, 11, ,    PCINT5 , OC1A,     ,     ,      ,
+PIN, PWM    , IO, DIG, PB4, 10, ,    PCINT4 , OC2A,     ,     ,      ,
+PIN, PWM    , IO, DIG, PH6, 9 , ,           , OC2B,     ,     ,      ,
+PIN, PWM    , IO, DIG, PH5, 8 , ,           , OC4C,     ,     ,      , Motor6 PWM
+ANCHOR, 2302,1323
+PIN, PWM    , IO, DIG, PH4, 7 , ,           , OC4B,     ,     ,      , Motor5 PWM
+PIN, PWM    , IO, DIG, PH3, 6 , ,    PCINT8 , OC4A,     ,     ,      , Motor4 PWM
+PIN, PWM    , IO, DIG, PE3, 5 , ,           , OC3A, AIN1,     ,      ,
+PIN, PWM    , IO, DIG, PG5, 4 , ,           , OC0B,     ,     ,      ,
+PIN, PWM    , IO, DIG, PE5, 3 , ,    INT5   , OC3C,     ,     ,      , Hall 4A
+PIN, PWM    , IO, DIG, PE4, 2 , ,    INT4   , OC3B,     ,     ,      , Hall 3A
+PIN, DIGITAL, IO, DIG, PE1, 1 , ,    PCINT3 ,     ,     ,     ,  TXD0, ELRS
+PIN, DIGITAL, IO, DIG, PE0, 0 , ,    PCINT8 ,     ,     ,     ,  RXD0, ELRS
+ANCHOR, 2302,1863
+PIN, DIGITAL, IO, DIG, PJ1, 14, ,    PCINT10,     ,     ,     ,  TXD3,
+PIN, DIGITAL, IO, DIG, PJ0, 15, ,    PCINT9 ,     ,     ,     ,  RXD3,
+PIN, DIGITAL, IO, DIG, PH1, 16, ,           ,     ,     ,     ,  TXD2,
+PIN, DIGITAL, IO, DIG, PH0, 17, ,           ,     ,     ,     ,  RXD2,
+PIN, DIGITAL, IO, DIG, PD3, 18, ,    INT3   ,     ,     ,     ,  TXD1,
+PIN, DIGITAL, IO, DIG, PD2, 19, ,    INT2   ,     ,     ,     ,  RXD1,
+PIN, DIGITAL, IO, DIG, PD1, 10, ,    INT1   ,     ,     ,     ,   SDA,
+PIN, DIGITAL, IO, DIG, PD0, 21, ,    INT0   ,     ,     ,     ,   SCL,
+
+# Right Bottom Pins
+ANCHOR, 2302,2583
+PIN, DIGITAL, IO, DIG,  PC1, 36, ,          ,  A9 ,     ,     ,      , Hall 5B
+PIN, DIGITAL, IO, DIG,  PC3, 34, ,          ,  A11,     ,     ,      , Hall 1B
+PIN, DIGITAL, IO, DIG,  PC5, 32, ,          ,  A13,     ,     ,      , MQ-135
+PIN, DIGITAL, IO, DIG,  PC7, 30, ,          ,  A15,     ,     ,      ,
+PIN, DIGITAL, IO, DIG,  PA6, 28, ,          ,  AD6,     ,     ,      ,
+PIN, DIGITAL, IO, DIG,  PA4, 26, ,          ,  AD4,     ,     ,      , Hall 3B
+PIN, DIGITAL, IO, DIG,  PA2, 24, ,          ,  AD2,     ,     ,      , Motor5 DIR
+PIN, DIGITAL, IO, DIG,  PA0, 22, ,          ,  AD0,     ,     ,      , Motor3 DIR
+PINTEXT, POWER, OUTPUT, POWER, 5V, PowerPin,
+PINTEXT, POWER, OUTPUT, POWER, 5V, PowerPin,
+PIN, DIGITAL, IO, DIG,  PA1, 23, ,          ,  AD1,     ,     ,      , Motor4 DIR
+PIN, DIGITAL, IO, DIG,  PA3, 25, ,          ,  AD3,     ,     ,      , Motor6 DIR
+PIN, DIGITAL, IO, DIG,  PA5, 27, ,          ,  AD5,     ,     ,      , Hall 3B
+PIN, DIGITAL, IO, DIG,  PA7, 29, ,          ,  AD7,     ,     ,      ,
+PIN, DIGITAL, IO, DIG,  PC6, 31, ,          ,  A14,     ,     ,      ,
+PIN, DIGITAL, IO, DIG,  PC4, 33, ,          ,  A12,     ,     ,      , Hall 2B
+PIN, DIGITAL, IO, DIG,  PC2, 35, ,          ,  A10,     ,     ,      , Hall 6B
+PIN, DIGITAL, IO, DIG,  PC0, 37, ,          ,  A8 ,     ,     ,      , 
+
+
+# Key
+BOX, DETAIL BOX, 200, 3950, 650, 900, , TOP, KEY
+
+ANCHOR, 250,4000
+PINSET,  RIGHT , PACKED, CENTER, CENTER, 74.75, 30, 45, 60, 10, 0
+PINTEXT, POWER      , OUTPUT, POWER , "...", PowerPin, Power Output Pin
+PINTEXT, POWER      , IO    , POWER , "...", PowerPin, Power IO Pin
+PINTEXT, DIGITAL    , IO    , DIG   , "...", PowerPin, DIGITAL GPIO
+PINTEXT, PWM        , IO    , DIG   , "...", PowerPin, Shared Hardware PWM Pin
+PINTEXT, ANALOG     , INPUT , ANA   , "...", PowerPin, Analog Input Pin
+
+# Box Key
+MESSAGE, 350, 4475, 50, Name, 26, LEFT, CENTER
+TEXT, none, black, Port Pin, NL
+TEXT, none, black, Digital Pin Arduino, NL
+TEXT, none, black, Analog Pin Arduino, NL
+TEXT, none, black, Interrupt Pin, NL
+TEXT, none, black, Pin Function, NL
+TEXT, none, black, Serial Pin, NL
+TEXT, none, black, Sensor Pin, NL
+
+BOX, PORTBOXKEY     , 250, 4450, , , , ,
+BOX, DIGBOXKEY      , 250, 4500, , , , ,
+BOX, ANABOXKEY      , 250, 4550, , , , ,
+BOX, INTBOXKEY      , 250, 4600, , , , ,
+BOX, FUNBOXKEY      , 250, 4650, , , , ,
+BOX, SERIALBOXKEY   , 250, 4700, , , , ,
+BOX, SENSORBOXKEY   , 250, 4750, , , , ,
+
+
+
+
+# Credits for web assets
+MESSAGE, 2400, 4800, 25, Name, 25, LEFT, TOP
+TEXT, none,gray, Credits:, NL
+TEXT, none,gray, https://github.com/amperka/hardware-drawings/blob/master/arduino-mega-2560.svg, NL
